@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "docuchat-backend"
+version = "0.1.0"
+dependencies = [
+  "Django==5.0.6",
+  "psycopg[binary]==3.2.1",
+  "djangorestframework==3.15.2",
+  "channels==4.1.0",
+  "channels-redis==4.2.0",
+  "asgiref==3.8.1",
+  "python-jose[cryptography]==3.3.0",
+  "requests==2.32.3",
+  "pdfminer.six==20240706",
+  "openai==1.40.2",
+  "numpy==2.1.0",
+]
