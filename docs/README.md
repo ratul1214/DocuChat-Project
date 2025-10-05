@@ -93,7 +93,7 @@ See detailed diagram and explanation in [`ARCHITECTURE.md`](docs/ARCHITECTURE.md
 
 ### 1. Clone and Configure
 ```bash
-git clone https://github.com/<your-org>/DocuChat-Project.git
+git clone https://github.com/ratul1214/DocuChat-Project.git
 cd DocuChat-Project
 ````
 
@@ -236,14 +236,7 @@ DocuChat-Project/
 
 ---
 
-## 👨‍💻 Contributors
 
-**Kartik Gajanan Gurav**
-M.Sc. Sustainable Production and Technology
-Technical University of Applied Sciences Regensburg
-📧 [[your.email@example.com](mailto:your.email@example.com)]
-
----
 
 ## 🪪 License
 

@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c59b4a23-0593-4df8-a6aa-c2c2b6eaa9c3" name="Changes" comment="Initate">
-      <change afterPath="$PROJECT_DIR$/backend/.env.sample" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/backend/.env.sample" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.env.sample" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.env.sample" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/backend/.env.sample" beforeDir="false" afterPath="$PROJECT_DIR$/backend/backend/.env.sample" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,11 +51,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/backend/backend" />
+      <recent name="$PROJECT_DIR$/backend" />
       <recent name="$PROJECT_DIR$/frontend" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/backend" />
       <recent name="$PROJECT_DIR$/docs" />
-      <recent name="$PROJECT_DIR$/backend/backend" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -65,7 +67,7 @@
       <option name="presentableId" value="Default" />
       <updated>1759473720635</updated>
       <workItem from="1759473725386" duration="33636000" />
-      <workItem from="1759601531768" duration="1083000" />
+      <workItem from="1759601531768" duration="4013000" />
     </task>
     <task id="LOCAL-00001" summary="Initate">
       <created>1759598100498</created>
@@ -109,7 +111,14 @@
       <option name="project" value="LOCAL" />
       <updated>1759601620346</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Initate">
+      <created>1759639054851</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1759639054851</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

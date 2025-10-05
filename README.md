@@ -236,14 +236,7 @@ DocuChat-Project/
 
 ---
 
-## 👨‍💻 Contributors
 
-**Kartik Gajanan Gurav**
-M.Sc. Sustainable Production and Technology
-Technical University of Applied Sciences Regensburg
-📧 [[your.email@example.com](mailto:your.email@example.com)]
-
----
 
 ## 🪪 License
 
