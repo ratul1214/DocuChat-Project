@@ -23,3 +23,5 @@ django-cors-headers==4.4.0
 
 # Utilities
 numpy==2.1.0
+sqlparse==0.5.1
+
