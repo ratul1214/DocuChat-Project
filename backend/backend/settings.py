@@ -10,7 +10,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'dev-secret-not-for-prod')
 DEBUG = os.getenv('DEBUG', '1') == '1'
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',')
-
+REST_FRAMEWORK = {
+    # Default throttle settings
+    "DEFAULT_THROTTLE_CLASSES": [
+        "rest_framework.throttling.UserRateThrottle",
+        "rest_framework.throttling.AnonRateThrottle",
+    ],
+    "DEFAULT_THROTTLE_RATES": {
+        "user": "20/min",   # Authenticated users: 20 requests per minute
+        "anon": "10/min",   # Unauthenticated users: 10 requests per minute
+    },
+}
 INSTALLED_APPS = [
     'corsheaders',
     'django.contrib.admin',
