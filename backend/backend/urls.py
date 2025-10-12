@@ -1,7 +1,7 @@
 from django.urls import path
 from django.contrib import admin
 from api.views import ProgressTestView, PasswordLoginView, HealthView, MeView, DocumentsView, UploadView, AskView, ReportListView, ReportDetailView, AgentReportStartView
-
+from api.views_metrics import MetricsView
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/health", HealthView.as_view()),
@@ -13,9 +13,7 @@ urlpatterns = [
     path("api/agent/report", AgentReportStartView.as_view()),
     path("api/agent/report/<int:report_id>", ReportDetailView.as_view()),
 path("api/progress/test", ProgressTestView.as_view()),
+    path("api/metrics", MetricsView(), name="metrics"),
 ]
-from api.views_metrics import MetricsView
 
-urlpatterns += [
-    path("metrics", MetricsView.as_view()),   # <- /metrics
-]
+
