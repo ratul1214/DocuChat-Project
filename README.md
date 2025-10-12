@@ -105,28 +105,28 @@ Users can:
 
 ### 1. Clone and Configure
 ```bash
-git clone https://github.com/<your-username>/<your-repo>.git
-cd <your-repo>/infra
-```
-
-Create `.env` file in `backend/`:
-```bash
+git clone https://github.com/ratul1214/DocuChat-Project.git
+cd DocuChat-Project
 cp backend/.env.sample backend/.env
-```
+cp frontend/.env.sample frontend/.env
+cd infra
+docker compose up --build
+````
+
+
+Edit environment values (especially your own OPENAI_API_KEY) (see [`OPERATIONS.md`](docs/OPERATIONS.md)).
 
 ---
 
-### 2. Build and Run
-```bash
-docker compose up --build
-```
 
-Access via:
+Open:
+
 ```
 http://localhost
 ```
 
 ---
+
 
 ### 3. Verify
 ```bash
@@ -235,7 +235,7 @@ DocuChat/
 ## 📦 Submission Notes
 
 **Repository Link:**  
-[https://github.com/<your-username>/<your-repo>](https://github.com/<your-username>/<your-repo>)
+[https://github.com/ratul1214/DocuChat-Project.git](https://github.com/ratul1214/DocuChat-Project.git)
 
 **Screen Recording (≤5 min):**
 - Login as a tenant user
