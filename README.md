@@ -1,4 +1,4 @@
-# 🧠 DocuChat — Document-Aware Chat System (Step 2)
+# DocuChat — Document-Aware Chat System (Step 2)
 
 **DocuChat** is an extended **Retrieval-Augmented Generation (RAG)** system that now supports multi-tenant document access, background indexing progress via WebSocket, and an LLM-powered chat interface. This builds upon the Step 1 MVP by adding deeper backend functionality, agent report generation, and observability.
 
@@ -7,7 +7,7 @@ This project completes **Step 2 of the assignment**:
 
 ---
 
-## 🗂️ Table of Contents
+## Table of Contents
 
 1. [Overview](#overview)
 2. [New Additions in Step 2](#new-additions-in-step-2)
@@ -39,17 +39,17 @@ Users can:
 
 ---
 
-## 🔁 New Additions in Step 2
+## New Additions in Step 2
 
 | Area | Improvement |
 |------|--------------|
-| 🧩 Multi-Tenancy | Documents, users, and embeddings are tenant-isolated |
-| ⚙️ Progress Streaming | Improved `/ws/progress` event structure with tenant & sub-user keys |
-| 🤖 Agent Reports | Background task generation and async agent status updates |
-| 📊 Metrics | Added Prometheus `/metrics` endpoint (request and vector metrics) |
-| 🔐 Authentication | Token-based mock login (`/api/auth/login`) |
-| 🧠 LLM Integration | Fallback to mock or real OpenAI backend |
-| 🧱 Database | Clean migrations with `Tenant`, `AppUser`, and `Report` models |
+| Multi-Tenancy | Documents, users, and embeddings are tenant-isolated |
+| Progress Streaming | Improved `/ws/progress` event structure with tenant & sub-user keys |
+| Agent Reports | Background task generation and async agent status updates |
+| Metrics | Added Prometheus `/metrics` endpoint (request and vector metrics) |
+| Authentication | Token-based mock login (`/api/auth/login`) |
+| LLM Integration | Fallback to mock or real OpenAI backend |
+| Database | Clean migrations with `Tenant`, `AppUser`, and `Report` models |
 
 ---
 
@@ -73,7 +73,7 @@ Users can:
 
 ---
 
-## 🏗️ System Architecture
+## System Architecture
 
 **Layers:**
 
@@ -90,14 +90,14 @@ Users can:
 
 | Feature | Description |
 |----------|--------------|
-| 🔑 Authentication | Simple mock token system per tenant |
-| 🧾 Tenant Isolation | Each user and document linked to a tenant |
-| 📤 Upload | Multi-file uploads, async indexing, real-time updates |
-| 🧠 Chat Ask | Context-aware answers with citations |
-| ⚡ WebSocket | `/ws/progress` and `/ws/agent` for live updates |
-| 🧮 Metrics | Prometheus `/metrics` output with query timing |
-| 🧰 Agent Reports | Async threaded report generation with `/api/agent/report` |
-| 🐳 Dockerized | Full stack managed via `docker compose up` |
+| Authentication | Simple mock token system per tenant |
+| Tenant Isolation | Each user and document linked to a tenant |
+| Upload | Multi-file uploads, async indexing, real-time updates |
+| Chat Ask | Context-aware answers with citations |
+| WebSocket | `/ws/progress` and `/ws/agent` for live updates |
+| Metrics | Prometheus `/metrics` output with query timing |
+| Agent Reports | Async threaded report generation with `/api/agent/report` |
+| Dockerized | Full stack managed via `docker compose up` |
 
 ---
 
