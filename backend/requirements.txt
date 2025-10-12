@@ -12,6 +12,12 @@ asgiref==3.8.1
 python-jose[cryptography]==3.3.0
 requests==2.32.3
 daphne==4.1.2
+pgvector==0.2.5
+psycopg[binary]==3.2.1
+numpy==2.1.0
+
+
+
 
 # PDFs
 pdfminer.six==20240706
@@ -23,5 +29,3 @@ django-cors-headers==4.4.0
 
 # Utilities
 numpy==2.1.0
-sqlparse==0.5.1
-
