@@ -1,26 +1,16 @@
 from django.urls import path
-from .views import UploadView, AskView, MeView, ListDocumentsView
-# backend/core/urls.py
-from django.urls import path
-from .views import health
+from django.contrib import admin
+from views import ProgressTestView, PasswordLoginView, HealthView, MeView, DocumentsView, UploadView, AskView, ReportListView, ReportDetailView, AgentReportStartView
 
 urlpatterns = [
-    path("health/", health),
-]
-
-urlpatterns = [
-    path('me', MeView.as_view(), name='me'),
-    path('documents', ListDocumentsView.as_view(), name='documents'),
-    path('upload', UploadView.as_view(), name='upload'),
-    path('chat/ask', AskView.as_view(), name='chat-ask'),
-]
-from .views import UploadView, AskView, MeView, ListDocumentsView, health
-
-urlpatterns = [
-    path('me', MeView.as_view(), name='me'),
-    path('documents', ListDocumentsView.as_view(), name='documents'),
-    path('upload', UploadView.as_view(), name='upload'),
-    path('chat/ask', AskView.as_view(), name='chat-ask'),
-    path('health', health, name='health'),          # ← add this
-    path('health/', health),                        # ← optional, trailing slash
+    path("admin/", admin.site.urls),
+    path("api/health", HealthView.as_view()),
+    path("api/auth/login", PasswordLoginView.as_view()),  # <— new
+    path("api/me", MeView.as_view()),
+    path("api/documents", DocumentsView.as_view()),
+    path("api/upload", UploadView.as_view()),
+    path("api/chat/ask", AskView.as_view()),
+    path("api/agent/report", AgentReportStartView.as_view()),
+    path("api/agent/report/<int:report_id>", ReportDetailView.as_view()),
+path("api/progress/test", ProgressTestView.as_view()),
 ]

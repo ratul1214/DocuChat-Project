@@ -93,7 +93,7 @@ See detailed diagram and explanation in [`ARCHITECTURE.md`](docs/ARCHITECTURE.md
 
 ### 1. Clone and Configure
 ```bash
-git clone https://github.com/ratul1214/DocuChat-Project.git
+git clone https://github.com/<your-org>/DocuChat-Project.git
 cd DocuChat-Project
 ````
 
@@ -103,14 +103,13 @@ Create `.env` in `backend/`:
 cp backend/.env.sample backend/.env
 ```
 
-Edit environment values especially your own OPENAI_API_KEY (see [`OPERATIONS.md`](docs/OPERATIONS.md)).
+Edit environment values (especially your own OPENAI_API_KEY) (see [`OPERATIONS.md`](docs/OPERATIONS.md)).
 
 ---
 
 ### 2. Build and Run
 
 ```bash
-cd infra
 docker compose up --build
 ```
 
@@ -209,7 +208,10 @@ DocuChat-Project/
 │   ├── ARCHITECTURE.md
 │   ├── API.md
 │   ├── OPERATIONS.md
-│   └── DECISIONS.md
+│   └── adr/
+│       ├── ADR-001-auth.md
+│       ├── ADR-002-proxy-topology.md
+│       └── ADR-003-rag-pipeline.md
 ├── infra/
 │   ├── docker-compose.yml
 │   ├── nginx.conf
@@ -234,7 +236,14 @@ DocuChat-Project/
 
 ---
 
+## 👨‍💻 Contributors
 
+**Kartik Gajanan Gurav**
+M.Sc. Sustainable Production and Technology
+Technical University of Applied Sciences Regensburg
+📧 [[your.email@example.com](mailto:your.email@example.com)]
+
+---
 
 ## 🪪 License
 

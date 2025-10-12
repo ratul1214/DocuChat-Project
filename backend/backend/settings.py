@@ -10,19 +10,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'dev-secret-not-for-prod')
 DEBUG = os.getenv('DEBUG', '1') == '1'
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',')
-REST_FRAMEWORK = {
-    # Default throttle settings
-    "DEFAULT_THROTTLE_CLASSES": [
-        "rest_framework.throttling.UserRateThrottle",
-        "rest_framework.throttling.AnonRateThrottle",
-    ],
-    "DEFAULT_THROTTLE_RATES": {
-        "user": "20/min",   # Authenticated users: 20 requests per minute
-        "anon": "10/min",   # Unauthenticated users: 10 requests per minute
-    },
-}
+
+
+
 INSTALLED_APPS = [
     'corsheaders',
+    "pgvector.django",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -31,21 +24,34 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'channels',
-    'api',
+    "api.apps.ApiConfig",
 
 
 
 ]
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",   # React dev server
+    "http://127.0.0.1:3000",
+    "https://localhost",
+    "https://127.0.0.1",
+]
 MIDDLEWARE = [
-    "corsheaders.middleware.CorsMiddleware",       # must be first
+    "api.middleware.RequestIDMiddleware",
     "django.middleware.security.SecurityMiddleware",
-    "django.contrib.sessions.middleware.SessionMiddleware",
+    "corsheaders.middleware.CorsMiddleware",   # must be high up
     "django.middleware.common.CommonMiddleware",
+    "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
+    "api.middleware.TenantMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
+# add near top
+import sys
+
+# ...
+TESTING = os.getenv("TESTING", "0") == "1" or "pytest" in sys.modules or "test" in sys.argv
 
 ROOT_URLCONF = 'backend.urls'
 
@@ -79,25 +85,74 @@ DATABASES = {
     }
 }
 
-CHANNEL_LAYERS = {
-    'default': {
-        'BACKEND': 'channels_redis.core.RedisChannelLayer',
-        'CONFIG': {
-            'hosts': [(os.getenv('REDIS_HOST', 'localhost'), int(os.getenv('REDIS_PORT', 6379)))],
-        },
-    },
+# CHANNEL_LAYERS = {
+#     'default': {
+#         'BACKEND': 'channels_redis.core.RedisChannelLayer',
+#         'CONFIG': {
+#             'hosts': [(os.getenv('REDIS_HOST', 'localhost'), int(os.getenv('REDIS_PORT', 6379)))],
+#         },
+#     },
+# }
+
+# --- Redis cache ---
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.redis.RedisCache",
+        "LOCATION": os.getenv("REDIS_URL", "redis://redis:6379/1"),
+        "TIMEOUT": 60,  # default TTL; you can override per-set
+    }
 }
+
+# --- DRF throttling ---
+# REST_FRAMEWORK = {
+#     "DEFAULT_THROTTLE_CLASSES": [
+#         "api.throttle.BurstTenantThrottle",
+#         "api.throttle.SustainedTenantThrottle",
+#     ],
+#     "DEFAULT_THROTTLE_RATES": {
+#         # tweak to taste
+#         "burst": os.getenv("THROTTLE_BURST", "20/min"),
+#         "sustained": os.getenv("THROTTLE_SUSTAINED", "200/day"),
+#     },
+# }
 
 REST_FRAMEWORK = {
-    "DEFAULT_AUTHENTICATION_CLASSES": (
-        "api.authentication.KeycloakOIDCAuthentication",  # ✅ uses mock if OIDC_VERIFY=mock
-    ),
-    "DEFAULT_PERMISSION_CLASSES": (
-        "rest_framework.permissions.IsAuthenticated",
-    ),
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "api.authentication.MockBearerAuthentication",
+    ],
+    "DEFAULT_THROTTLE_CLASSES": [
+        "api.throttle.BurstTenantThrottle",
+        "api.throttle.SustainedTenantThrottle",
+    ],
+    "DEFAULT_THROTTLE_RATES": {
+        "burst": "20/min",
+        "sustained": "200/day",
+    },
 }
-
-
+#
+# REST_FRAMEWORK = {
+#     "DEFAULT_AUTHENTICATION_CLASSES": (
+#         "api.authentication.KeycloakOIDCAuthentication",  # ✅ uses mock if OIDC_VERIFY=mock
+#     ),
+#     "DEFAULT_PERMISSION_CLASSES": (
+#         "rest_framework.permissions.IsAuthenticated",
+#     ),
+#     # Default throttle settings
+#     "DEFAULT_THROTTLE_CLASSES": [
+#         "rest_framework.throttling.UserRateThrottle",
+#         "rest_framework.throttling.AnonRateThrottle",
+#     ],
+#     "DEFAULT_THROTTLE_RATES": {
+#         "user": "20/min",   # Authenticated users: 20 requests per minute
+#         "anon": "10/min",   # Unauthenticated users: 10 requests per minute
+#     },
+# }
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {"hosts": [("redis", 6379)]},
+    },
+}
 
 
 
@@ -129,3 +184,11 @@ CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_HEADERS = list(default_headers) + ["authorization"]
 CORS_ALLOW_METHODS = ["GET", "POST", "OPTIONS"]
+from corsheaders.defaults import default_headers
+CORS_ALLOW_HEADERS = list(default_headers) + [
+    "authorization",
+    "x-tenant",
+    "content-type",
+]
+APPEND_SLASH = True
+
