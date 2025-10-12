@@ -124,6 +124,7 @@ Edit environment values (especially your own OPENAI_API_KEY) (see [`OPERATIONS.m
 
 Open:
 
+Access via:
 ```
 http://localhost
 ```
