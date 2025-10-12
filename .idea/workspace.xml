@@ -5,35 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c59b4a23-0593-4df8-a6aa-c2c2b6eaa9c3" name="Changes" comment="Initate">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/.env.sample" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.env.sample" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/api/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/api/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/api/authentication.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/api/authentication.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/api/consumers.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/api/consumers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/api/embeddings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/api/embeddings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/api/indexing.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/api/indexing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/api/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/api/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/api/permissions.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/api/permissions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/api/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/api/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/backend/.env.sample" beforeDir="false" afterPath="$PROJECT_DIR$/backend/backend/.env.sample" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/backend/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/backend/asgi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/backend/routing.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/backend/routing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/backend/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/backend/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/backend/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/backend/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/assets/index-C3y7W8sI.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/assets/index-Dgepgum4.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/AppRouter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/AppRouter.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/ProgressStream.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ProgressStream.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/LoginPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/LoginPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/services/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/infra/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/nginx.conf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/nginx.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/api/migrations/0001_initial.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +66,7 @@
       <updated>1759473720635</updated>
       <workItem from="1759473725386" duration="33636000" />
       <workItem from="1759601531768" duration="13294000" />
-      <workItem from="1760242633327" duration="812000" />
+      <workItem from="1760242633327" duration="2700000" />
     </task>
     <task id="LOCAL-00001" summary="Initate">
       <created>1759598100498</created>
