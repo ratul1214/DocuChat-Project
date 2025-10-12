@@ -111,6 +111,9 @@ cp backend/.env.sample backend/.env
 cp frontend/.env.sample frontend/.env
 cd infra
 docker compose up --build
+docker compose exec backend python manage.py makemigrations api -n initial
+docker compose exec backend python manage.py migrate
+
 ````
 
 
