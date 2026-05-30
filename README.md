@@ -1,8 +1,8 @@
-# DocuChat — Document-Aware Chat System (Step 2)
+# DocuChat — Document-Aware Chat System 
 
 **DocuChat** is an extended **Retrieval-Augmented Generation (RAG)** system that now supports multi-tenant document access, background indexing progress via WebSocket, and an LLM-powered chat interface. This builds upon the Step 1 MVP by adding deeper backend functionality, agent report generation, and observability.
 
-This project completes **Step 2 of the assignment**:
+This project completes :
 > “As an authenticated user, I can upload docs, see indexing progress, and ask questions that are answered with citations to my docs — across multiple tenants, with metrics and LLM integration.”
 
 ---
