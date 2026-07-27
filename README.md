@@ -58,20 +58,7 @@ Users can:
 > **Step 2 User Story:**
 > “As an authenticated user, I can upload docs, see indexing progress, and ask questions that are answered with citations to my docs — in an isolated tenant environment.”
 
-### ✅ Must-Haves
-1. Multi-tenant authentication
-2. Document upload + async indexing with progress
-3. `/api/chat/ask` endpoint using embeddings + LLM
-4. Background report agent system
-5. Prometheus metrics endpoint
-6. Docker Compose orchestration (backend, frontend, Redis, Postgres, Nginx)
 
-### 💡 Nice-to-Haves
-- Live LLM streaming responses
-- Role-based tenant access control
-- Multi-step agent execution logging
-
----
 
 ## System Architecture
 
